@@ -35,7 +35,7 @@ const AgenceCommunicationPage = () => {
     return (
         <section className={'mt-28'}>
 
-            <h1 className={'text-center text-4xl font-bold uppercase'} data-aos="fade-up">
+            <h1 className={'text-center text-3xl md:text-4xl font-bold uppercase'} data-aos="fade-up">
                 Amiens Food, votre agence de
                 <span className={'text-primary mx-auto block relative max-w-max'}>
                     communication
