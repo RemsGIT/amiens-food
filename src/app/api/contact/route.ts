@@ -11,7 +11,7 @@ export async function POST(request: Request) {
 
         const mail = await resend.emails.send({
             from: 'Amiens food <noreply@amiensfood.com>',
-            to: 'remycastro27@icloud.com',
+            to: 'contact@amiensfood.com',
             subject: 'Message: Amiens Food | Agence Communication',
             html: `<b>Nom : ${lastname}</b> <br> <b>Prénom : ${firstname}</b> <br> <b>Téléphone : ${phone}</b> <br>  <b>Mail : </b>${email} <br> <b>Message : </b><br> ${message}`,
         })
