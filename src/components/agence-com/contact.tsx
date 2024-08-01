@@ -55,7 +55,7 @@ export const AgenceComContact = () => {
     }
 
     return (
-        <div className={'bg-[#FFFAF7] rounded-t-[120px] flex flex-col lg:flex-row mt-72 lg:mt-24'}>
+        <div id={'contact'} className={'bg-[#FFFAF7] rounded-t-[120px] flex flex-col lg:flex-row mt-72 lg:mt-24'}>
 
             <div className={'mx-2  lg:ml-14 mt-14 mb-6 lg:my-14'}>
                 <h6 className={'uppercase text-2xl lg:text-3xl font-bold text-center lg:text-left'}>
