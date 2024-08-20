@@ -15,6 +15,7 @@ import ServicesVideoSvg from '../../../public/img/services-video.svg'
 import ServicesGooglePng from '../../../public/img/services-google.png'
 import ServicesStatsSvg from '../../../public/img/services-stats.svg'
 import ServicesSponsorSvg from '../../../public/img/services-sponsor.svg'
+import ServicesAnswerCustomer from '../../../public/img/services-answer-customer.svg'
 
 import Image from "next/image";
 import {MoveLeft, MoveRight} from "lucide-react";
@@ -37,7 +38,7 @@ export const ServicesCarousel = () => {
                     0: {
                         slidesPerView: 1,
                         grid: {
-                            rows: 6,
+                            rows: 7,
                             fill: 'row'
                         },
                         spaceBetween: 0
@@ -155,7 +156,7 @@ export const ServicesCarousel = () => {
 
                         <Image src={ServicesStatsSvg}
                                alt={'Planning éditorial & suivi statistiques mensuel - Amiens food'}
-                               className={'mt-3 mx-auto w-[160px]'}/>
+                               className={'mt-3 mx-auto w-[140px] xs:w-[160px]'}/>
 
                         <div>
                             <h4 className={'text-lg xs:text-xl font-bold text-center block xs:hidden mt-2 xs:mt-0'}>Planning
@@ -176,6 +177,21 @@ export const ServicesCarousel = () => {
 
                         <div>
                             <h4 className={'text-lg xs:text-xl font-bold text-center block xs:hidden mt-2 xs:mt-0'}>Gestion Sponsorisation, ads manager</h4>
+                            <p className={'text-xs text-center mt-6 xs:mt-3'}>Lorem ipsum dolor sit amet</p>
+                        </div>
+                    </Card>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <Card
+                        className={'services_slider_item p-2 border-none grid grid-cols-2 xs:grid-cols-1 rounded-3xl xs:rounded-lg'}>
+                        <h4 className={'text-lg font-bold text-center hidden xs:block'}>Réponse aux clients et repartage</h4>
+
+                        <Image src={ServicesAnswerCustomer} alt={'Réponse aux clients et repartage - Amiens food'}
+                               className={'mt-3 mx-auto w-[170px]'}/>
+
+                        <div>
+                            <h4 className={'text-xl xs:text-xl font-bold text-center block xs:hidden mt-2 xs:mt-0'}>Réponse aux clients et repartage</h4>
                             <p className={'text-xs text-center mt-6 xs:mt-3'}>Lorem ipsum dolor sit amet</p>
                         </div>
                     </Card>

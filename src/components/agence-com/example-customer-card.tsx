@@ -19,14 +19,20 @@ export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
 
             <div className={`w-full bg-[#F78E3D] h-[300px] rounded-[50px] mt-6 lg:mt-8 grid grid-cols-1 lg:grid-cols-2`}>
 
-                <Image
-                    src={data.mockup}
-                    alt={`${data.name} - Amiens Food communication`}
-                    className={`${data.reversed ? 'order-1 lg:mr-20' : 'order-last lg:order-first lg:ml-20'} mt-2 lg:-mt-12 mx-auto w-[150px] lg:w-[200px]`}
+
+                <video
                     width={800}
-                    height={800
-                    }
-                />
+                    height={800}
+                    className={`${data.reversed ? 'order-1 lg:mr-20' : 'order-last lg:order-first lg:ml-20'} mt-2 lg:-mt-12 mx-auto w-[150px] lg:w-[200px]`}
+                    autoPlay
+                    loop
+                    playsInline
+                    muted
+                >
+                    <source src={data.mockup} type={'video/mp4'} />
+                </video>
+
+
 
                 <div className={`${data.reversed ? 'lg:ml-20' : 'lg:-ml-20'} space-y-5`}>
                     <h5 className={`text-white text-3xl lg:text-4xl text-center lg:text-left font-bold mt-8`}>{data.name}</h5>

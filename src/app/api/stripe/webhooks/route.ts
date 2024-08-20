@@ -14,23 +14,19 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 type EventName =
     | "invoice.payment_succeeded"
-    | "customer.subscription.created"
     | "customer.subscription.updated"
-    | "customer.subscription.deleted"
-    | "customer.subscription.paused"
-    | "customer.subscription.resumed";
 
 async function handleStripeWebhook(body: any) {
     const customer = body.data?.object.customer
     const startAt = body.data?.object.period_start
     const expireAt = body.data?.object.period_end
     const subId = body.data?.object.subscription
-    
+
     switch (body.type) {
         case "invoice.payment_succeeded":
             if(body.data?.object.status !== "paid") return;
             if((!subId || subId === "")) return;
-
+            
             try {
                 await prisma.stripeAccount.update({
                     where: {
@@ -48,18 +44,18 @@ async function handleStripeWebhook(body: any) {
                 console.log('error while updating user subscription')
                 return NextResponse.json({ success: false })
             }
-            
+
             // Create card and send by mail
             const response = await fetch(`${process.env.APP_URL}/api/user/card`, {method: 'POST', body: JSON.stringify({afterPayment: true, fromWebhook: true, email: body.data?.object.customer_email})})
                 .then(res => res.json())
-            
-            // Get user : 
+
+            // Get user :
             let passUrl: any = undefined
             const user = await prisma.user.findUnique({where: {email: body.data?.object.customer_email }})
             if(user) {
                 passUrl = user.passUrl
             }
-            
+
             const emailResponse = await sendCardByEmail(response.card, body.data?.object.customer_email, passUrl, passUrl)
 
             return { success: true, message: "Customer payment succeeded!", mail: JSON.stringify(emailResponse) }
@@ -103,14 +99,6 @@ async function handleStripeWebhook(body: any) {
             }
             // Add logic for handling the deletion of a customer's subscription
             return NextResponse.json({ success: true, message: "Customer subscription deleted!" })
-        case "customer.subscription.paused":
-            console.log('sub paused')
-            // Add logic for handling the pausing of a customer's subscription
-            return NextResponse.json({ success: true, message: "Customer subscription paused!" })
-        case "customer.subscription.resumed":
-            console.log('sub resumed')
-            // Add logic for handling the resumption of a customer's subscription
-            return NextResponse.json({ success: true, message: "Customer subscription resumed!" })
 
         default:
             return NextResponse.json({success: false, message: "Invalid event type" })
