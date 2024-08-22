@@ -3,7 +3,7 @@ import {MultipleStars} from "@/src/components/ui/multiple-stars";
 export const AmiensFoodSection = () => {
     return (
         <div className={'bg-[#FFFAF6] px-4 pt-10 pb-16 rounded-tl-[100px] rounded-ee-[100px] md:rounded-ee-[150px] md:px-20 md:pb-10'}>
-            <h2 className={'ml-12 md:ml-0 text-2xl md:text-3xl xl:text-5xl'}>Le format vidéo <span
+            <h2 className={'ml-6 md:ml-0 text-3xl xl:text-5xl'}>Le format vidéo <span
                 className={'text-primary font-bold'}>amiensfood</span>, <br/> un vrai <span
                 className={'text-primary font-bold'}>bon coup</span> !</h2>
 
