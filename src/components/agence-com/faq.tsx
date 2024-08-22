@@ -63,10 +63,10 @@ export const FAQ = () => {
 
             </Swiper>
             <div
-                className="custom-prev -bottom-14 translate-x-[50%] flex right-[51%] md:top-[40%] md:translate-y-[50%] md:left-[40px] xl:left-[120px]">
+                className="custom-prev -bottom-14 hidden translate-x-[50%] md:flex right-[51%] md:top-[40%] md:translate-y-[50%] md:left-[40px] xl:left-[120px]">
                 <MoveLeft size={20}/></div>
             <div
-                className="custom-next -bottom-14 translate-x-[50%] flex left-[51%] md:left-auto  md:top-[40%] md:translate-y-[50%] md:right-[40px] xl:right-[120px]">
+                className="custom-next -bottom-14 hidden translate-x-[50%] md:flex left-[51%] md:left-auto  md:top-[40%] md:translate-y-[50%] md:right-[40px] xl:right-[120px]">
                 <MoveRight size={20}/></div>
         </div>
     )
