@@ -11,6 +11,7 @@ import LogoWiotte from '../../../../public/img/wiotte-logo.webp'
 import {AgenceComContact} from "@/src/components/agence-com/contact";
 import {ReviewCustomer} from "@/src/components/agence-com/review-customer";
 import {AmiensFoodSection} from "@/src/components/agence-com/amiensfood";
+import {FAQ} from "@/src/components/agence-com/faq";
 
 
 const MamatteExample: ComCustomerExample = {
@@ -102,7 +103,11 @@ const AgenceCommunicationPage = () => {
 
 
                 <div data-aos={'fade-up'}>
-                    <AmiensFoodSection />
+                    <AmiensFoodSection/>
+                </div>
+
+                <div className={'mt-20'}>
+                    <FAQ/>
                 </div>
 
                 <AgenceComContact/>

@@ -147,11 +147,6 @@ export const AgenceComContact = () => {
                     </Form>
                 </div>
             </div>
-
-            <div className={'mx-6 md:mx-auto md:w-5/6'}>
-                <FAQ/>
-            </div>
-
         </div>
 
     )
