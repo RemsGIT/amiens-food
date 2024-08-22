@@ -10,6 +10,7 @@ import LogoMamatte from '../../../../public/img/mamatte-logo.webp'
 import LogoWiotte from '../../../../public/img/wiotte-logo.webp'
 import {AgenceComContact} from "@/src/components/agence-com/contact";
 import {ReviewCustomer} from "@/src/components/agence-com/review-customer";
+import {AmiensFoodSection} from "@/src/components/agence-com/amiensfood";
 
 
 const MamatteExample: ComCustomerExample = {
@@ -87,7 +88,7 @@ const AgenceCommunicationPage = () => {
 
                 <div data-aos="fade-up" className={'mt-20'}>
                     <h3 className={'text-center text-3xl max-w-max mx-auto font-bold uppercase py-8 relative'}>
-                        Community manager
+                        {"Comment est ce qu'on booste votre chiffre d'affaire ?"}
                         <span className={'absolute -right-7 top-6'}>
                             <MultipleStars width={25}/>
                         </span>
@@ -97,6 +98,11 @@ const AgenceCommunicationPage = () => {
                     <div className={'pb-12'}>
                         <ServicesCarousel/>
                     </div>
+                </div>
+
+
+                <div data-aos={'fade-up'}>
+                    <AmiensFoodSection />
                 </div>
 
                 <AgenceComContact/>
