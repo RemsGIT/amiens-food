@@ -32,5 +32,6 @@ export interface ComCustomerExample {
     logo: string,
     mockup: any,
     reversed?: boolean,
-    reviewText: string
+    reviewText: string,
+    type: 'video' | 'image'
 }

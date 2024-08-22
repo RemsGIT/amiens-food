@@ -30,17 +30,26 @@ export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
                             src={MockupEmpty}
                             alt={''}
                         />
-                        <video
-                            width={800}
-                            height={800}
-                            className="absolute top-8 left-[10px] w-[130px] lg:w-[180px] lg:h-[350px] object-cover"
-                            autoPlay
-                            loop
-                            playsInline
-                            muted
-                        >
-                            <source src={data.mockup} type={'video/mp4'}/>
-                        </video>
+                        {data.type === 'video' ? (
+                            <video
+                                width={800}
+                                height={800}
+                                className="absolute top-8 left-[10px] w-[120px] lg:w-[180px] lg:h-[350px] object-cover"
+                                autoPlay
+                                loop
+                                playsInline
+                                muted
+                            >
+                                <source src={data.mockup} type={'video/mp4'}/>
+                            </video>
+                        ) : (
+                            <img
+                                className="absolute top-8 left-[10px] w-[130px] lg:w-[180px] lg:h-[350px] object-cover rounded-3xl"
+                                src={data.mockup}
+                                alt={`Amiens food - ${data.name}`}
+                            />
+                        )}
+
                     </div>
 
 
@@ -65,17 +74,26 @@ export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
                                 src={MockupEmpty}
                                 alt={''}
                             />
-                            <video
-                                width={800}
-                                height={800}
-                                className={`ml-6 top-4 -left-[18px] w-[88px] h-[175px]  lg:w-[180px] absolute object-cover`}
-                                autoPlay
-                                loop
-                                playsInline
-                                muted
-                            >
-                                <source src={data.mockup} type={'video/mp4'}/>
-                            </video>
+                            {data.type === 'video' ? (
+                                <video
+                                    width={800}
+                                    height={800}
+                                    className={`ml-6 top-4 -left-[18px] w-[88px] h-[175px]  lg:w-[180px] absolute object-cover`}
+                                    autoPlay
+                                    loop
+                                    playsInline
+                                    muted
+                                >
+                                    <source src={data.mockup} type={'video/mp4'}/>
+                                </video>
+                            ) : (
+                                <img
+                                    className={`ml-6 top-4 -left-[18px] w-[88px] h-[175px]  lg:w-[180px] absolute object-cover rounded-md`}
+                                    src={data.mockup}
+                                    alt={`Amiens food - ${data.name}`}
+                                />
+                            )}
+
                         </div>
 
 

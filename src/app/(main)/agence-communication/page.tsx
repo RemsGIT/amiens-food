@@ -4,8 +4,6 @@ import {ServicesCarousel} from "@/src/components/agence-com/services-carousel";
 import {ExampleCustomerCard} from "@/src/components/agence-com/example-customer-card";
 import {ComCustomerExample} from "@/src/utils/types";
 
-import MockupMamatte from '../../../../public/img/mockup-mamatte-v1.png'
-import MockupWiotte from '../../../../public/img/mockup-mamatte-v1.png'
 import LogoMamatte from '../../../../public/img/mamatte-logo.webp'
 import LogoWiotte from '../../../../public/img/wiotte-logo.webp'
 import {AgenceComContact} from "@/src/components/agence-com/contact";
@@ -22,7 +20,8 @@ const MamatteExample: ComCustomerExample = {
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     logo: LogoMamatte as any,
     mockup: '/video/video_mamatte.MOV',
-    reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.'
+    reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
+    type: 'video'
 }
 
 const BoucherieWiotte: ComCustomerExample = {
@@ -31,9 +30,10 @@ const BoucherieWiotte: ComCustomerExample = {
     name: "Boucherie wiotte",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     logo: LogoWiotte as any,
-    mockup: '/video/video_mamatte.MOV',
+    mockup: '/img/mockup-wiotte.png',
     reversed: true,
-    reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.'
+    reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
+    type: 'image'
 }
 
 const AgenceCommunicationPage = () => {
