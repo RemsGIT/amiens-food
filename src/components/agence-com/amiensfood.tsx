@@ -1,4 +1,6 @@
 import {MultipleStars} from "@/src/components/ui/multiple-stars";
+import MockupEmpty from "@/public/img/mockup-front-empty.png";
+import Image from "next/image";
 
 export const AmiensFoodSection = () => {
     return (
@@ -8,15 +10,22 @@ export const AmiensFoodSection = () => {
                 className={'text-primary font-bold'}>bon coup</span> !</h2>
 
             <div className={'grid grid-cols-2 items-center mt-6 max-w-[1400px] mx-auto'}>
-                <video width="200"
-                       autoPlay
-                       loop
-                       playsInline
-                       muted
-                       className={'mx-auto w-[120px] md:w-[200px] xl:w-[250px]'}
-                >
-                    <source src={'/video/mockupmamatte.mp4'} type="video/mp4"/>
-                </video>
+                <div className={'relative mx-auto w-[120px] md:w-[200px] xl:w-[250px]'}>
+                    <Image
+                        src={MockupEmpty}
+                        alt={''}
+                    />
+                    <video width="200"
+                           autoPlay
+                           loop
+                           playsInline
+                           muted
+                           className={'absolute top-6 left-2.5 md:top-9  md:left-4 w-[100px] md:w-[170px] xl:w-[220px]'}
+                    >
+                        <source src={'/video/video_mamatte.MOV'}/>
+                    </video>
+                </div>
+
 
                 <ul className={'com-amiensfood-stats gap-y-4 -ml-4 font-bold grid  max-w-[800px] xl:gap-y-10 xl:grid-cols-1 md:ml-0'}>
                     <li>45.000 vues de moyenne</li>
