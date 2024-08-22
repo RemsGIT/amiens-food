@@ -31,5 +31,6 @@ export interface ComCustomerExample {
     description: string,
     logo: string,
     mockup: any,
-    reversed?: boolean
+    reversed?: boolean,
+    reviewText: string
 }

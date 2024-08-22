@@ -20,7 +20,8 @@ const MamatteExample: ComCustomerExample = {
     name: "Mamatte boulangerie",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     logo: LogoMamatte as any,
-    mockup: '/video/mockupmamatte.mp4'
+    mockup: '/video/mockupmamatte.mp4',
+    reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.'
 }
 
 const BoucherieWiotte: ComCustomerExample = {
@@ -30,7 +31,8 @@ const BoucherieWiotte: ComCustomerExample = {
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     logo: LogoWiotte as any,
     mockup: '/video/mockupmamatte.mp4',
-    reversed: true
+    reversed: true,
+    reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.'
 }
 
 const AgenceCommunicationPage = () => {
@@ -62,7 +64,7 @@ const AgenceCommunicationPage = () => {
                     <div data-aos="fade-right">
                         <ExampleCustomerCard data={MamatteExample}/>
 
-                        <div className={'mt-64 lg:mt-20'}>
+                        <div className={'mt-64 lg:mt-20 hidden md:block'}>
                             <ReviewCustomer
                                 review={{
                                     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -75,7 +77,7 @@ const AgenceCommunicationPage = () => {
                     <div data-aos="fade-left">
                         <ExampleCustomerCard data={BoucherieWiotte}/>
 
-                        <div className={'mt-64 lg:mt-20'}>
+                        <div className={'mt-64 lg:mt-20 hidden md:block'}>
                             <ReviewCustomer
                                 review={{
                                     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
