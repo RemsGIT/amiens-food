@@ -14,13 +14,14 @@ import {AmiensFoodSection} from "@/src/components/agence-com/amiensfood";
 import {FAQ} from "@/src/components/agence-com/faq";
 
 
+
 const MamatteExample: ComCustomerExample = {
     from: "11.000",
     to: "21.000",
     name: "Mamatte boulangerie",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     logo: LogoMamatte as any,
-    mockup: '/video/mockupmamatte.mp4',
+    mockup: '/video/video_mamatte.MOV',
     reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.'
 }
 
@@ -30,7 +31,7 @@ const BoucherieWiotte: ComCustomerExample = {
     name: "Boucherie wiotte",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     logo: LogoWiotte as any,
-    mockup: '/video/mockupmamatte.mp4',
+    mockup: '/video/video_mamatte.MOV',
     reversed: true,
     reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.'
 }
@@ -58,9 +59,9 @@ const AgenceCommunicationPage = () => {
 
 
             {/* SECOND SECTION : SERVICES */}
-            <section className={'w-full bg-[#F8EBE0] rounded-t-[80px] sm:rounded-t-[120px] mt-12'}>
+            <section className={'w-full md:bg-[#F8EBE0] md:rounded-t-[80px] sm:rounded-t-[120px] mt-16 md:mt-12'}>
 
-                <div className={'space-y-32 sm:space-y-20 mx-2 sm:mx-20 pt-12'}>
+                <div className={'space-y-32 sm:space-y-20 mx-2 sm:mx-20 md:pt-12'}>
                     <div data-aos="fade-right">
                         <ExampleCustomerCard data={MamatteExample}/>
 
@@ -89,30 +90,33 @@ const AgenceCommunicationPage = () => {
                 </div>
 
 
-                <div data-aos="fade-up" className={'mt-20'}>
-                    <h3 className={'text-center text-3xl max-w-max mx-auto font-bold uppercase py-8 relative'}>
-                        {"Comment est ce qu'on booste votre chiffre d'affaire ?"}
-                        <span className={'absolute -right-7 top-6'}>
+                <div className={'bg-[#F8EBE0] rounded-t-[80px] md:bg-none md:rounded-none'}>
+                    <div data-aos="fade-up" className={'mt-20 '}>
+                        <h3 className={'text-center text-3xl max-w-max mx-auto font-bold uppercase py-8 relative'}>
+                            {"Comment est ce qu'on booste votre chiffre d'affaire ?"}
+                            <span className={'absolute -right-7 top-6'}>
                             <MultipleStars width={25}/>
                         </span>
-                    </h3>
+                        </h3>
 
 
-                    <div className={'pb-12'}>
-                        <ServicesCarousel/>
+                        <div className={'pb-12'}>
+                            <ServicesCarousel/>
+                        </div>
                     </div>
+
+
+                    <div data-aos={'fade-up'}>
+                        <AmiensFoodSection/>
+                    </div>
+
+                    <div className={'mt-20'}>
+                        <FAQ/>
+                    </div>
+
+                    <AgenceComContact/>
                 </div>
 
-
-                <div data-aos={'fade-up'}>
-                    <AmiensFoodSection/>
-                </div>
-
-                <div className={'mt-20'}>
-                    <FAQ/>
-                </div>
-
-                <AgenceComContact/>
             </section>
 
 
