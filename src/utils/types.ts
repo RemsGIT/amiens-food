@@ -33,5 +33,6 @@ export interface ComCustomerExample {
     mockup: any,
     reversed?: boolean,
     reviewText: string,
-    type: 'video' | 'image'
+    type: 'video' | 'image',
+    social_media: 'instagram' | 'tiktok'
 }

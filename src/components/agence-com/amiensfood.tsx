@@ -6,7 +6,7 @@ export const AmiensFoodSection = () => {
     return (
         <div className={'bg-[#FFFAF6] px-4 pt-10 pb-16 rounded-tl-[100px] rounded-ee-[100px] md:rounded-ee-[150px] md:px-20 md:pb-10'}>
             <h2 className={'ml-6 md:ml-0 text-3xl xl:text-5xl'}>Le format vidéo <span
-                className={'text-primary font-bold'}>amiensfood</span>, <br/> un vrai <span
+                className={'text-primary font-bold'}>Amiensfood</span>, <br/> un vrai <span
                 className={'text-primary font-bold'}>bon coup</span> !</h2>
 
             <div className={'grid grid-cols-2 items-center mt-6 max-w-[1400px] mx-auto'}>
@@ -22,7 +22,7 @@ export const AmiensFoodSection = () => {
                            muted
                            className={'absolute top-6 left-2.5 md:top-9  md:left-4 w-[100px] md:w-[170px] xl:w-[220px]'}
                     >
-                        <source src={'/video/video_mamatte.MOV'}/>
+                        <source src={'/video/mockup_amiensfood.mov'}/>
                     </video>
                 </div>
 

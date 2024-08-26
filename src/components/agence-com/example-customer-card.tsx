@@ -2,9 +2,11 @@ import {MultipleStars} from "@/src/components/ui/multiple-stars";
 import {ComCustomerExample} from "@/src/utils/types";
 import Image from "next/image";
 import {ReviewCustomer} from "@/src/components/agence-com/review-customer";
-import LogoMamatte from "@/public/img/mamatte-logo.webp";
 
 import MockupEmpty from '@/public/img/mockup-front-empty.png'
+
+import InstagramLogo from '@/public/img/icons/instagram.svg'
+import TiktokLogo from '@/public/img/icons/tiktok.svg'
 
 export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
     return (
@@ -16,6 +18,11 @@ export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
                     <br/>
                     <span className={'relative text-primary text-2xl lg:text-xl'}>
                     abonnés
+                    <Image
+                        src={data.social_media === 'instagram' ? InstagramLogo : TiktokLogo}
+                        alt={`${data.name} | Amiens food | ${data.social_media}`}
+                        className={'w-[25px] inline align-text-bottom ml-1.5'}
+                    />
                 <span className={'absolute -right-6 -top-1.5'}>
                     <MultipleStars width={20}/>
                 </span>
@@ -25,7 +32,8 @@ export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
                 <div
                     className={`w-full bg-[#F78E3D] h-[300px] rounded-[50px] mt-6 lg:mt-8 grid grid-cols-1 lg:grid-cols-2`}>
 
-                    <div className={`relative w-[150px] lg:w-[200px] mx-auto mt-2 lg:-mt-12 ${data.reversed ? 'order-1 lg:mr-20' : 'order-last lg:order-first lg:ml-20'}`}>
+                    <div
+                        className={`relative w-[150px] lg:w-[200px] mx-auto mt-2 lg:-mt-12 ${data.reversed ? 'order-1 lg:mr-20' : 'order-last lg:order-first lg:ml-20'}`}>
                         <Image
                             src={MockupEmpty}
                             alt={''}
@@ -68,8 +76,8 @@ export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
                     className={`w-full bg-[#F78E3D] pb-12 rounded-[50px] mt-6 lg:mt-8`}>
                     <h5 className={`text-white text-3xl lg:text-4xl text-center lg:text-left font-bold pt-4`}>{data.name}</h5>
 
-                    <div className={'grid grid-cols-2 items-center mt-3 '}>
-                        <div className={'relative w-[100px] lg:w-[200px] ml-4'}>
+                    <div className={'grid grid-cols-2 items-center mt-3 gap-4'}>
+                        <div className={'relative w-[120px] lg:w-[200px] ml-4'}>
                             <Image
                                 src={MockupEmpty}
                                 alt={''}
@@ -78,7 +86,7 @@ export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
                                 <video
                                     width={800}
                                     height={800}
-                                    className={`ml-6 top-4 -left-[18px] w-[88px] h-[175px]  lg:w-[180px] absolute object-cover`}
+                                    className={`ml-6 top-4 -left-[18px] w-[108px] h-[210px]  lg:w-[180px] absolute object-cover`}
                                     autoPlay
                                     loop
                                     playsInline
@@ -88,7 +96,7 @@ export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
                                 </video>
                             ) : (
                                 <img
-                                    className={`ml-6 top-4 -left-[18px] w-[88px] h-[175px]  lg:w-[180px] absolute object-cover rounded-md`}
+                                    className={`ml-6 top-4 -left-[18px] w-[108px] h-[210px]  lg:w-[180px] absolute object-cover rounded-md`}
                                     src={data.mockup}
                                     alt={`Amiens food - ${data.name}`}
                                 />
@@ -111,6 +119,11 @@ export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
                         <br/>
                         <span className={'relative text-white text-2xl lg:text-xl'}>
                         abonnés
+                        <Image
+                            src={data.social_media === 'instagram' ? InstagramLogo : TiktokLogo}
+                            alt={`${data.name} | Amiens food | ${data.social_media}`}
+                            className={'w-[30px] inline align-text-bottom ml-2'}
+                        />
                         <span className={'absolute -right-6 -top-1.5'}>
                             <MultipleStars width={20}/>
                         </span>

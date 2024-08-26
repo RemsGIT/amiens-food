@@ -12,16 +12,16 @@ import {AmiensFoodSection} from "@/src/components/agence-com/amiensfood";
 import {FAQ} from "@/src/components/agence-com/faq";
 
 
-
 const MamatteExample: ComCustomerExample = {
     from: "11.000",
     to: "21.000",
     name: "Mamatte boulangerie",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     logo: LogoMamatte as any,
-    mockup: '/video/video_mamatte.MOV',
+    mockup: '/video/video_mamatte.mov',
     reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
-    type: 'video'
+    type: 'video',
+    social_media: 'instagram'
 }
 
 const BoucherieWiotte: ComCustomerExample = {
@@ -33,7 +33,8 @@ const BoucherieWiotte: ComCustomerExample = {
     mockup: '/img/mockup-wiotte.png',
     reversed: true,
     reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
-    type: 'image'
+    type: 'image',
+    social_media: 'tiktok'
 }
 
 const AgenceCommunicationPage = () => {
@@ -95,8 +96,8 @@ const AgenceCommunicationPage = () => {
                         <h3 className={'text-center text-3xl max-w-max mx-auto font-bold uppercase py-8 relative'}>
                             {"Comment est ce qu'on booste votre chiffre d'affaire ?"}
                             <span className={'absolute -right-7 top-6'}>
-                            <MultipleStars width={25}/>
-                        </span>
+                                <MultipleStars width={25}/>
+                            </span>
                         </h3>
 
 
@@ -106,11 +107,14 @@ const AgenceCommunicationPage = () => {
                     </div>
 
 
-                    <div data-aos={'fade-up'}>
+                    <div>
                         <AmiensFoodSection/>
                     </div>
 
                     <div className={'mt-20'}>
+                        <h3 className={'text-center text-3xl max-w-max mx-auto font-bold uppercase py-8 relative'}>
+                            Mini FAQ pour mieux se connaître !
+                        </h3>
                         <FAQ/>
                     </div>
 

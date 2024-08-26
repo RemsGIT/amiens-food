@@ -22,7 +22,7 @@ export const ReviewCustomer = ({review}:{review: CustomerReview}) => {
                     />
                     <div className={'flex'}>
                         {Array.from({length: 5}, (index: number) => (
-                            <Star key={index} fill="primary" strokeWidth={0}/>
+                            <Star key={index} fill="#F78E3D" strokeWidth={0}/>
                         ))}
                     </div>
                 </div>
@@ -42,11 +42,12 @@ export const ReviewCustomer = ({review}:{review: CustomerReview}) => {
                     <Image
                         src={review.logo as any}
                         alt={`Partenaire amiens food`}
-                        className={'w-[30px] h-[30px] bg-black rounded-full p-1 object-contain'}
+                        className={'w-[40px] h-[40px] bg-black rounded-full p-1 object-contain'}
                     />
                     <div className={'flex'}>
                         {Array.from({length: 5}, (index: number) => (
-                            <Star key={index} fill="primary" size={12} strokeWidth={0}/>
+                            <Star key={index} fill="#FFD700" size={18} strokeWidth={0}/>
+
                         ))}
                     </div>
                 </div>
