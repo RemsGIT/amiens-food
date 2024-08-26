@@ -32,12 +32,8 @@
 }
 
 
-.custom-prev, .custom-next {
+.custom-prev, .custom-next, .custom-prev-light, .custom-next-light {
     position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: #F78E3D;
-    color: #fff;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -46,15 +42,32 @@
     font-size: 24px;
 }
 
-
+.custom-prev, .custom-next {
+    width: 40px;
+    height: 40px;
+    background-color: #F78E3D;
+    color: #fff;
+}
 .custom-prev:hover, .custom-next:hover {
     background-color: #e07c2b;
 }
 
+.custom-prev-light, .custom-next-light {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    color: #F78E3D;;
+}
+.custom-prev:hover, .custom-next:hover {
+    background-color: #fff;
+}
+
+
+
 .swiper-button-disabled {
-    background-color: #FFD1A9;
-    cursor: not-allowed;
-    pointer-events: none;
+    background-color: #FFD1A9 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
 }
 
 

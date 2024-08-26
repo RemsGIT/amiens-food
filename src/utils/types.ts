@@ -34,5 +34,6 @@ export interface ComCustomerExample {
     reversed?: boolean,
     reviewText: string,
     type: 'video' | 'image',
-    social_media: 'instagram' | 'tiktok'
+    social_media: 'instagram' | 'tiktok',
+    images?: string[]
 }

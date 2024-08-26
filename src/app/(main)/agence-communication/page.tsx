@@ -21,7 +21,8 @@ const MamatteExample: ComCustomerExample = {
     mockup: '/video/video_mamatte.mov',
     reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
     type: 'video',
-    social_media: 'instagram'
+    social_media: 'instagram',
+    images: ['https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300']
 }
 
 const BoucherieWiotte: ComCustomerExample = {
@@ -34,7 +35,8 @@ const BoucherieWiotte: ComCustomerExample = {
     reversed: true,
     reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
     type: 'image',
-    social_media: 'tiktok'
+    social_media: 'tiktok',
+    images: ['https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300']
 }
 
 const AgenceCommunicationPage = () => {
