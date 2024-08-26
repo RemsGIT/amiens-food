@@ -25,8 +25,8 @@ const MamatteExample: ComCustomerExample = {
 }
 
 const BoucherieWiotte: ComCustomerExample = {
-    from: "3200",
-    to: "6400",
+    from: "5000",
+    to: "11500",
     name: "Boucherie wiotte",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     logo: LogoWiotte as any,
@@ -114,6 +114,9 @@ const AgenceCommunicationPage = () => {
                     <div className={'mt-20'}>
                         <h3 className={'text-center text-3xl max-w-max mx-auto font-bold uppercase py-8 relative'}>
                             Mini FAQ pour mieux se connaître !
+                            <span className={'absolute right-14 bottom-7 md:-right-10 md:top-5'}>
+                                <MultipleStars width={40}/>
+                            </span>
                         </h3>
                         <FAQ/>
                     </div>

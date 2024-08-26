@@ -20,7 +20,7 @@ export const AmiensFoodSection = () => {
                            loop
                            playsInline
                            muted
-                           className={'absolute top-6 left-2.5 md:top-9  md:left-4 w-[100px] md:w-[170px] xl:w-[220px]'}
+                           className={'absolute top-7 left-2.5 md:top-11  md:left-4 w-[100px] md:w-[170px] xl:w-[220px] '}
                     >
                         <source src={'/video/mockup_amiensfood.mov'}/>
                     </video>
