@@ -19,9 +19,28 @@ import ServicesAnswerCustomer from '../../../public/img/services-answer-customer
 
 import Image from "next/image";
 import {MoveLeft, MoveRight} from "lucide-react";
+import {useEffect, useRef} from "react";
 
 
 export const ServicesCarousel = () => {
+
+    const prevRef = useRef<HTMLDivElement | null>(null);
+    const nextRef = useRef<HTMLDivElement | null>(null);
+    const swiperRef = useRef<any>(null);
+
+    useEffect(() => {
+        if (swiperRef.current && prevRef.current && nextRef.current) {
+            // Configure les éléments de navigation une fois que les références sont disponibles
+            swiperRef.current.params.navigation.prevEl = prevRef.current;
+            swiperRef.current.params.navigation.nextEl = nextRef.current;
+
+            // Initialiser et mettre à jour les boutons de navigation
+            swiperRef.current.navigation.init();
+            swiperRef.current.navigation.update();
+        }
+    }, []); // Ce useEffect se déclenche une seule fois après le premier rendu
+
+
     return (
         <div className={'relative'}>
             <Swiper
@@ -29,8 +48,8 @@ export const ServicesCarousel = () => {
                 modules={[Navigation, Grid]}
                 spaceBetween={20}
                 navigation={{
-                    prevEl: '.custom-prev',
-                    nextEl: '.custom-next',
+                    prevEl: prevRef.current,
+                    nextEl: nextRef.current,
                     disabledClass: 'swiper-button-disabled'
                 }}
                 className={'swiper-container'}
@@ -72,6 +91,10 @@ export const ServicesCarousel = () => {
                     }
 
                 }}
+                onSwiper={(swiper) => {
+                    // Assigner l'instance Swiper à la référence
+                    swiperRef.current = swiper;
+                }}
             >
                 <SwiperSlide>
                     <Card
@@ -86,7 +109,7 @@ export const ServicesCarousel = () => {
                         <div>
                             <h4 className={'text-2xl xs:text-xl font-bold text-center block xs:hidden mt-4 xs:mt-0'}>Community <br/> management
                             </h4>
-                            <p className={'text-xs text-center mt-5 xs:mt-3'}>Lorem ipsum dolor sit amet</p>
+                            <p className={'text-xs text-center mt-5 xs:mt-3'}>Animation de vos réseaux sociaux de A à Z</p>
                         </div>
 
                     </Card>
@@ -106,7 +129,7 @@ export const ServicesCarousel = () => {
                         <div>
                             <h4 className={'text-2xl xs:text-xl font-bold text-center block xs:hidden mt-4 xs:mt-0'}>Création
                                 de vidéo</h4>
-                            <p className={'text-xs text-center mt-3'}>Lorem ipsum dolor sit amet</p>
+                            <p className={'text-xs text-center mt-3'}>Shooting vidéo sur mesure pour créer des réels qui déchirent sur vos réseaux !</p>
 
                         </div>
                     </Card>
@@ -125,7 +148,7 @@ export const ServicesCarousel = () => {
                         <div>
                             <h4 className={'text-2xl xs:text-xl font-bold text-center block xs:hidden mt-4 xs:mt-0'}>Création
                                 de photo</h4>
-                            <p className={'text-xs text-center mt-3'}>Lorem ipsum dolor sit amet</p>
+                            <p className={'text-xs text-center mt-3'}>Lumière, agencement, gestion de {"l'espace"}, qualité professionnelle, {"c'est"} le moment de mettre vos produits en valeur !</p>
                         </div>
                     </Card>
                 </SwiperSlide>
@@ -142,7 +165,7 @@ export const ServicesCarousel = () => {
                         <div>
                             <h4 className={'text-xl xs:text-xl font-bold text-center block xs:hidden mt-2 xs:mt-0'}>Optimisation <br/>Google
                                 MyBusiness</h4>
-                            <p className={'text-xs text-center mt-3'}>Lorem ipsum dolor sit amet</p>
+                            <p className={'text-xs text-center mt-3'}>Un meilleur référencement, + {"d'avis"}, + de rayonnement !</p>
                         </div>
                     </Card>
                 </SwiperSlide>
@@ -162,7 +185,7 @@ export const ServicesCarousel = () => {
                             <h4 className={'text-lg xs:text-xl font-bold text-center block xs:hidden mt-2 xs:mt-0'}>Planning
                                 éditorial & suivi statistiques
                                 mensuel</h4>
-                            <p className={'text-xs text-center mt-6 xs:mt-3'}>Lorem ipsum dolor sit amet</p>
+                            <p className={'text-xs text-center mt-6 xs:mt-3'}>Un compte rendu mensuel complet sur notre collaboration</p>
                         </div>
                     </Card>
                 </SwiperSlide>
@@ -177,7 +200,7 @@ export const ServicesCarousel = () => {
 
                         <div>
                             <h4 className={'text-lg xs:text-xl font-bold text-center block xs:hidden mt-2 xs:mt-0'}>Gestion Sponsorisation, ads manager</h4>
-                            <p className={'text-xs text-center mt-6 xs:mt-3'}>Lorem ipsum dolor sit amet</p>
+                            <p className={'text-xs text-center mt-6 xs:mt-3'}>Spécialiste Ads Manager, ou plutôt comment attirer des clients qui ne vous connaissent pas encore !</p>
                         </div>
                     </Card>
                 </SwiperSlide>
@@ -192,15 +215,17 @@ export const ServicesCarousel = () => {
 
                         <div>
                             <h4 className={'text-xl xs:text-xl font-bold text-center block xs:hidden mt-2 xs:mt-0'}>Réponse aux clients et repartage</h4>
-                            <p className={'text-xs text-center mt-6 xs:mt-3'}>Lorem ipsum dolor sit amet</p>
+                            <p className={'text-xs text-center mt-6 xs:mt-3'}>Concentrez vous sur votre métier, on {"s'occupe"} du reste !</p>
                         </div>
                     </Card>
                 </SwiperSlide>
             </Swiper>
             <div
+                ref={prevRef}
                 className="custom-prev -bottom-14 translate-x-[50%] hidden right-[51%] xs:flex md:top-[40%] md:translate-y-[50%] md:left-[40px] xl:left-[120px]">
                 <MoveLeft size={20}/></div>
             <div
+                ref={nextRef}
                 className="custom-next -bottom-14 translate-x-[50%] hidden left-[51%] xs:flex md:left-auto  md:top-[40%] md:translate-y-[50%] md:right-[40px] xl:right-[120px]">
                 <MoveRight size={20}/></div>
         </div>

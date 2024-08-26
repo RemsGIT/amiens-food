@@ -3,6 +3,7 @@
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper/modules";
 import {MoveLeft, MoveRight} from "lucide-react";
+import {useEffect, useRef} from "react";
 
 
 const faq = [
@@ -25,6 +26,24 @@ const faq = [
 ]
 
 export const FAQ = () => {
+
+    const prevRef = useRef<HTMLDivElement | null>(null);
+    const nextRef = useRef<HTMLDivElement | null>(null);
+    const swiperRef = useRef<any>(null);
+
+    useEffect(() => {
+        if (swiperRef.current && prevRef.current && nextRef.current) {
+            // Configure les éléments de navigation une fois que les références sont disponibles
+            swiperRef.current.params.navigation.prevEl = prevRef.current;
+            swiperRef.current.params.navigation.nextEl = nextRef.current;
+
+            // Initialiser et mettre à jour les boutons de navigation
+            swiperRef.current.navigation.init();
+            swiperRef.current.navigation.update();
+        }
+    }, []); // Ce useEffect se déclenche une seule fois après le premier rendu
+
+
     return (
         <div className={'relative'}>
             <Swiper
@@ -32,8 +51,8 @@ export const FAQ = () => {
                 modules={[Navigation]}
                 spaceBetween={20}
                 navigation={{
-                    prevEl: '.custom-prev',
-                    nextEl: '.custom-next',
+                    prevEl: prevRef.current,
+                    nextEl: nextRef.current,
                     disabledClass: 'swiper-button-disabled'
                 }}
                 className={'swiper-container'}
@@ -50,6 +69,10 @@ export const FAQ = () => {
                         }
                     }
                 }}
+                onSwiper={(swiper) => {
+                    // Assigner l'instance Swiper à la référence
+                    swiperRef.current = swiper;
+                }}
             >
                 {faq.map((faq, index) => (
                     <SwiperSlide key={index}>
@@ -63,10 +86,12 @@ export const FAQ = () => {
 
             </Swiper>
             <div
+                ref={prevRef}
                 className="custom-prev flex -bottom-14 translate-x-[50%] right-[56%] md:top-[40%] md:translate-y-[50%] md:left-[40px] xl:left-[120px]">
                 <MoveLeft size={20}/>
             </div>
             <div
+                ref={nextRef}
                 className="custom-next flex -bottom-14 translate-x-[50%] left-[47%] md:left-auto  md:top-[40%] md:translate-y-[50%] md:right-[40px] xl:right-[120px]">
                 <MoveRight size={20}/>
             </div>
