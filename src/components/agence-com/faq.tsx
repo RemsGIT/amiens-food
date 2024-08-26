@@ -8,20 +8,20 @@ import {useEffect, useRef} from "react";
 
 const faq = [
     {
-        question: 'Question 1',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        question: 'Comment on bosse ensemble ?',
+        answer: 'On fixe une date ensemble pour les shootings ! Ensuite notre team  crée le contenu, on te  montre tout puis on te propose un planning éditorial à ta disposition 24h/24h ! Ensuite tous les mois on fait un compte rendu ensemble des statistiques !'
     },
     {
-        question: 'Question 2',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        question: 'Marre de répondre aux clients ?',
+        answer: 'On s’occupe de tout ! Concentre toi sur ton métier, on prend le relais pour chouchouter tes clients en ligne et répondre à toutes leurs questions !'
     },
     {
-        question: 'Question 3',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        question: 'Tu ne sais pas prendre de photos ?',
+        answer: 'Ça tombe bien c’est notre métier ! C’est le moment de rendre sexy toute ta carte !'
     },
     {
-        question: 'Question 4',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        question: 'Tu ne sais pas comment ça marche la sponsorisation ?',
+        answer: 'On t’explique tout de A à Z, on la gère en te faisant un retour régulier et tu verras enfin de nouvelles têtes à ta boutique !'
     },
 ]
 
@@ -78,7 +78,7 @@ export const FAQ = () => {
                     <SwiperSlide key={index}>
                         <div>
                             <div className={'bg-primary rounded-3xl text-center uppercase p-2 text-white font-bold w-5/6 mx-auto z-30 relative'}>{faq.question}</div>
-                            <div className={'bg-[#FFFAF6] -mt-3 pt-8 px-12 pb-4 rounded-[30px] text-justify'}>{faq.answer}</div>
+                            <div className={'bg-[#FFFAF6] -mt-3 pt-8 px-12 pb-4 rounded-[30px] text-justify min-h-[280px] md:min-h-[180px]'}>{faq.answer}</div>
                         </div>
                     </SwiperSlide>
                 ))}
