@@ -5,7 +5,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {MoveLeft, MoveRight} from "lucide-react";
 import {useEffect, useRef} from "react";
 
-export const ExampleCustomerImagesCarousel = ({images}:{images: string[]}) => {
+export const ExampleCustomerImagesCarousel = ({images, hasMockup}:{images: string[], hasMockup: boolean}) => {
 
     const id = (Math.random() * (1000 - 0) + 1000).toFixed(0).toString();
 
@@ -45,7 +45,7 @@ export const ExampleCustomerImagesCarousel = ({images}:{images: string[]}) => {
                         spaceBetween: 20
                     },
                     1000: {
-                        slidesPerView: 1.1,
+                        slidesPerView: hasMockup ? 1.1 : 2.1,
                         grid: {
                             rows: 1,
                             fill: 'row'

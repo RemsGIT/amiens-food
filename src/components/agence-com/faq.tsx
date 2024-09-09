@@ -5,23 +5,33 @@ import {Navigation} from "swiper/modules";
 import {MoveLeft, MoveRight} from "lucide-react";
 import {useEffect, useRef} from "react";
 
+import CollaboratePicto from '@/public/img/collaborer.png'
+import PicturePicto from '@/public/img/appareil-photo.png'
+import ChatPicto from '@/public/img/bulle.png'
+import QuestionPicture from '@/public/img/question.png'
+import Image from "next/image";
+
 
 const faq = [
     {
         question: 'Comment on bosse ensemble ?',
-        answer: 'On fixe une date ensemble pour les shootings ! Ensuite notre team  crée le contenu, on te  montre tout puis on te propose un planning éditorial à ta disposition 24h/24h ! Ensuite tous les mois on fait un compte rendu ensemble des statistiques !'
+        answer: 'On fixe une date ensemble pour les shootings ! Ensuite notre team  crée le contenu, on te  montre tout puis on te propose un planning éditorial à ta disposition 24h/24h ! Ensuite tous les mois on fait un compte rendu ensemble des statistiques !',
+        icon: CollaboratePicto
     },
     {
         question: 'Marre de répondre aux clients ?',
-        answer: 'On s’occupe de tout ! Concentre toi sur ton métier, on prend le relais pour chouchouter tes clients en ligne et répondre à toutes leurs questions !'
+        answer: 'On s’occupe de tout ! Concentre toi sur ton métier, on prend le relais pour chouchouter tes clients en ligne et répondre à toutes leurs questions !',
+        icon: ChatPicto
     },
     {
         question: 'Tu ne sais pas prendre de photos ?',
-        answer: 'Ça tombe bien c’est notre métier ! C’est le moment de rendre sexy toute ta carte !'
+        answer: 'Ça tombe bien c’est notre métier ! C’est le moment de rendre sexy tes produits !',
+        icon: PicturePicto
     },
     {
         question: 'Tu ne sais pas comment ça marche la sponsorisation ?',
-        answer: 'On t’explique tout de A à Z, on la gère en te faisant un retour régulier et tu verras enfin de nouvelles têtes à ta boutique !'
+        answer: 'On t’explique tout de A à Z, on la gère en te faisant un retour régulier et tu verras enfin de nouvelles têtes à ta boutique !',
+        icon: QuestionPicture
     },
 ]
 
@@ -76,9 +86,10 @@ export const FAQ = () => {
             >
                 {faq.map((faq, index) => (
                     <SwiperSlide key={index}>
-                        <div>
+                        <div className={'relative'}>
                             <div className={'bg-primary rounded-3xl text-center uppercase p-2 text-white font-bold w-5/6 mx-auto z-30 relative'}>{faq.question}</div>
-                            <div className={'bg-[#FFFAF6] -mt-3 pt-8 px-12 pb-4 rounded-[30px] text-justify min-h-[280px] md:min-h-[180px]'}>{faq.answer}</div>
+                            <Image src={faq.icon} alt={`Amiens food - ${faq.question}`} className={'w-8 -rotate-12 absolute left-4 z-50 opacity-65'} />
+                            <div className={'bg-[#F8EBE0] -mt-3 pt-12 px-12 pb-4 rounded-[30px] text-justify min-h-[28c0px] md:min-h-[180px]'}>{faq.answer}</div>
                         </div>
                     </SwiperSlide>
                 ))}

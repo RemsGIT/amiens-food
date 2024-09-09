@@ -22,7 +22,8 @@ const MamatteExample: ComCustomerExample = {
     reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
     type: 'video',
     social_media: 'instagram',
-    images: ['https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300']
+    images: ['https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300'],
+    period: 'en un an'
 }
 
 const BoucherieWiotte: ComCustomerExample = {
@@ -31,12 +32,13 @@ const BoucherieWiotte: ComCustomerExample = {
     name: "Boucherie wiotte",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     logo: LogoWiotte as any,
-    mockup: '/img/mockup-wiotte.png',
+    mockup: '',
     reversed: true,
     reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
     type: 'image',
     social_media: 'tiktok',
-    images: ['https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300']
+    images: ['https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300'],
+    period: 'depuis février'
 }
 
 const AgenceCommunicationPage = () => {
@@ -72,7 +74,8 @@ const AgenceCommunicationPage = () => {
                             <ReviewCustomer
                                 review={{
                                     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                                    logo: LogoMamatte as any
+                                    logo: LogoMamatte as any,
+                                    hasMockup: MamatteExample.mockup
                                 }}
                             />
                         </div>
@@ -85,7 +88,8 @@ const AgenceCommunicationPage = () => {
                             <ReviewCustomer
                                 review={{
                                     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                                    logo: LogoWiotte as any
+                                    logo: LogoWiotte as any,
+                                    hasMockup: MamatteExample.mockup
                                 }}
                             />
                         </div>
@@ -96,7 +100,7 @@ const AgenceCommunicationPage = () => {
                 <div className={'bg-[#F8EBE0] rounded-t-[80px] md:bg-none md:rounded-none'}>
                     <div data-aos="fade-up" className={'mt-20 '}>
                         <h3 className={'text-center text-3xl max-w-max mx-auto font-bold uppercase py-8 relative'}>
-                            {"Comment est ce qu'on booste votre chiffre d'affaire ?"}
+                            {"Comment est ce qu'on booste ton chiffre d'affaire ?"}
                             <span className={'absolute -right-7 top-6'}>
                                 <MultipleStars width={25}/>
                             </span>
@@ -113,10 +117,10 @@ const AgenceCommunicationPage = () => {
                         <AmiensFoodSection/>
                     </div>
 
-                    <div className={'mt-20'}>
+                    <div className={'mt-20 bg-[#FFFAF7]  pt-8 pb-20 rounded-tl-[100px]'} >
                         <h3 className={'text-center text-3xl max-w-max mx-auto font-bold uppercase py-8 relative'}>
                             Mini FAQ pour mieux se connaître !
-                            <span className={'absolute right-14 bottom-7 md:-right-10 md:top-5'}>
+                            <span className={'absolute right-16 bottom-7 md:-right-10 md:top-5'}>
                                 <MultipleStars width={40}/>
                             </span>
                         </h3>

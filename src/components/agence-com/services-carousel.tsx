@@ -109,7 +109,7 @@ export const ServicesCarousel = () => {
                         <div>
                             <h4 className={'text-2xl xs:text-xl font-bold text-center block xs:hidden mt-4 xs:mt-0'}>Community <br/> management
                             </h4>
-                            <p className={'text-xs text-center mt-5 xs:mt-3'}>Animation de vos réseaux sociaux de A à Z</p>
+                            <p className={'text-xs text-center mt-5 xs:mt-3'}>Animation de tes réseaux sociaux de A à Z</p>
                         </div>
 
                     </Card>
@@ -129,7 +129,7 @@ export const ServicesCarousel = () => {
                         <div>
                             <h4 className={'text-2xl xs:text-xl font-bold text-center block xs:hidden mt-4 xs:mt-0'}>Création
                                 de vidéo</h4>
-                            <p className={'text-xs text-center mt-3'}>Shooting vidéo sur mesure pour créer des réels qui déchirent sur vos réseaux !</p>
+                            <p className={'text-xs text-center mt-3'}>Shooting vidéo sur mesure pour créer des réels qui déchirent sur tes réseaux !</p>
 
                         </div>
                     </Card>
@@ -148,7 +148,7 @@ export const ServicesCarousel = () => {
                         <div>
                             <h4 className={'text-2xl xs:text-xl font-bold text-center block xs:hidden mt-4 xs:mt-0'}>Création
                                 de photo</h4>
-                            <p className={'text-xs text-center mt-3'}>Lumière, agencement, gestion de {"l'espace"}, qualité professionnelle, {"c'est"} le moment de mettre vos produits en valeur !</p>
+                            <p className={'text-xs text-center mt-3'}>Lumière, agencement, gestion de {"l'espace"}, qualité professionnelle, {"c'est"} le moment de mettre tes produits en valeur !</p>
                         </div>
                     </Card>
                 </SwiperSlide>
@@ -200,7 +200,7 @@ export const ServicesCarousel = () => {
 
                         <div>
                             <h4 className={'text-lg xs:text-xl font-bold text-center block xs:hidden mt-2 xs:mt-0'}>Gestion Sponsorisation, ads manager</h4>
-                            <p className={'text-xs text-center mt-6 xs:mt-3'}>Spécialiste Ads Manager, ou plutôt comment attirer des clients qui ne vous connaissent pas encore !</p>
+                            <p className={'text-xs text-center mt-6 xs:mt-3'}>Spécialiste Ads Manager, ou plutôt comment attirer des clients qui ne te connaissent pas encore !</p>
                         </div>
                     </Card>
                 </SwiperSlide>
@@ -215,7 +215,7 @@ export const ServicesCarousel = () => {
 
                         <div>
                             <h4 className={'text-xl xs:text-xl font-bold text-center block xs:hidden mt-2 xs:mt-0'}>Réponse aux clients et repartage</h4>
-                            <p className={'text-xs text-center mt-6 xs:mt-3'}>Concentrez vous sur votre métier, on {"s'occupe"} du reste !</p>
+                            <p className={'text-xs text-center mt-6 xs:mt-3'}>Concentre-toi ton votre métier, on {"s'occupe"} du reste !</p>
                         </div>
                     </Card>
                 </SwiperSlide>

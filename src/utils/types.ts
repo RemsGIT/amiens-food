@@ -35,5 +35,6 @@ export interface ComCustomerExample {
     reviewText: string,
     type: 'video' | 'image',
     social_media: 'instagram' | 'tiktok',
-    images?: string[]
+    images?: string[],
+    period? : string
 }

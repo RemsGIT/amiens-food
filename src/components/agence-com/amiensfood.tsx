@@ -2,6 +2,9 @@ import {MultipleStars} from "@/src/components/ui/multiple-stars";
 import MockupEmpty from "@/public/img/mockup-front-empty.png";
 import Image from "next/image";
 
+import Logo from '@/public/img/logo/logo-no-text.png'
+import PicturePicto from '@/public/img/appareil-photo.png'
+
 export const AmiensFoodSection = () => {
     return (
         <div className={'bg-[#FFFAF6] px-4 pt-10 pb-16 rounded-tl-[100px] rounded-ee-[100px] md:rounded-ee-[150px] md:px-20 md:pb-10'}>
@@ -12,18 +15,17 @@ export const AmiensFoodSection = () => {
             <div className={'grid grid-cols-2 items-center mt-6 max-w-[1400px] mx-auto'}>
                 <div className={'relative mx-auto w-[120px] md:w-[200px] xl:w-[250px]'}>
                     <Image
-                        src={MockupEmpty}
-                        alt={''}
+                        src={Logo}
+                        alt={'bg-[#FFFAF6] w-full'}
                     />
-                    <video width="200"
-                           autoPlay
-                           loop
-                           playsInline
-                           muted
-                           className={'absolute top-7 left-2.5 md:top-11  md:left-4 w-[100px] md:w-[170px] xl:w-[220px] '}
-                    >
-                        <source src={'/video/mockup_amiensfood.mov'}/>
-                    </video>
+
+                    <Image
+                        src={PicturePicto}
+                        alt={''}
+                        className={'absolute w-[70px] lg:[100px] -top-[70px]'}
+                    />
+
+
                 </div>
 
 

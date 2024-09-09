@@ -6,7 +6,8 @@ export interface CustomerReview {
     text: string,
     author?: string,
     author_position?: string,
-    logo?: string
+    logo?: string,
+    hasMockup: boolean
 }
 
 export const ReviewCustomer = ({review}:{review: CustomerReview}) => {
@@ -14,7 +15,7 @@ export const ReviewCustomer = ({review}:{review: CustomerReview}) => {
         <>
             <div className={'hidden flex-col w-[80%] sm:w-auto lg:w-3/4 mx-auto max-w-[800px] md:flex'}>
 
-                <div className={'flex items-center gap-2 -ml-8 lg:-ml-[105px]'}>
+                <div className={`flex items-center gap-2 ${review.hasMockup ? '-ml-8 lg:-ml-[105px]' : ''}`}>
                     <Image
                         src={review.logo as any}
                         alt={`Partenaire amiens food`}
@@ -29,14 +30,15 @@ export const ReviewCustomer = ({review}:{review: CustomerReview}) => {
 
 
                 <div className={'italic text-justify mt-3'}>
-                    <p className={'relative'}>
+                    <span className={'not-italic font-bold'}>Le petit mot : </span>
+                    <p className={'relative mt-1'}>
                         <Quote size={25} className={'absolute -left-8  scale-x-[-1]'}/>
                         {review.text}
-                        <Quote size={25} className={'inline ml-2 align-text-top'} />
+                        <Quote size={25} className={'inline ml-2 align-text-top'}/>
                     </p>
                 </div>
             </div>
-            <div className={'flex flex-col -ml-4 mr-6 md:hidden'}>
+            <div className={`flex flex-col ${review.hasMockup ? '-ml-4' : 'ml-12'} mr-6 md:hidden`}>
 
                 <div className={'flex items-center gap-2 -ml-8 lg:-ml-[105px]'}>
                     <Image
@@ -53,8 +55,9 @@ export const ReviewCustomer = ({review}:{review: CustomerReview}) => {
                 </div>
 
 
-                <div className={'italic text-justify mt-3'}>
-                    <p className={'relative text-xs'}>
+                <div className={'italic text-justify mt-1'}>
+                    <span className={'not-italic font-semibold text-xs'}>Le petit mot : </span>
+                    <p className={'relative text-xs mt-1'}>
                         <Quote size={18} className={'absolute -left-6  scale-x-[-1]'}/>
                         {review.text}
                         <Quote size={18} className={'inline ml-2 align-text-top'}/>
