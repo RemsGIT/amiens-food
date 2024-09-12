@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
-async function main() { 
+async function main() {
     //region PAGE D'ACCUEIL
     await prisma.personnalize.upsert({
         where: {libelle: "Titre page d'accueil"},
@@ -109,7 +109,7 @@ async function main() {
         }
     })
     //endregion
-    
+
     //region PAGE CONTACT
     await prisma.personnalize.upsert({
         where: {libelle: "Titre page contact"},
@@ -130,7 +130,7 @@ async function main() {
         }
     })
     //endregion
-    
+
     //region PAIEMENT
     await prisma.personnalize.upsert({
         where: {libelle: "Titre page paiement"},
@@ -186,7 +186,7 @@ async function main() {
             text: "2. Un aperçu de ta carte"
         }
     })
-    
+
     //endregion
 
     //region QUI SUIS-JE
@@ -200,6 +200,54 @@ async function main() {
         }
     })
 
+    //endregion
+
+    //region AGENCE COMMUNICATION
+    await prisma.personnalize.upsert({
+        where: {libelle: "Agence com - Mamatte texte"},
+        update: {},
+        create: {
+            code: 'COM_MAMATTE_EXAMPLE',
+            libelle: "Agence com - Mamatte texte",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+    })
+    await prisma.personnalize.upsert({
+        where: {libelle: "Agence com - Mamatte avis"},
+        update: {},
+        create: {
+            code: 'COM_MAMATTE_REVIEW',
+            libelle: "Agence com - Mamatte avis",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+    })
+    await prisma.personnalize.upsert({
+        where: {libelle: "Agence com - Wiotte texte"},
+        update: {},
+        create: {
+            code: 'COM_WIOTTE_EXAMPLE',
+            libelle: "Agence com - Wiotte texte",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+    })
+    await prisma.personnalize.upsert({
+        where: {libelle: "Agence com - Wiotte avis"},
+        update: {},
+        create: {
+            code: 'COM_WIOTTE_REVIEW',
+            libelle: "Agence com - Wiotte avis",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+    })
+    await prisma.personnalize.upsert({
+        where: {libelle: "Agence com - Amiens food"},
+        update: {},
+        create: {
+            code: 'COM_AMIENSFOOD',
+            libelle: "Agence com - Amiens food",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+    })
     //endregion
 }
 main()

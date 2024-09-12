@@ -2,7 +2,7 @@ import {MultipleStars} from "@/src/components/ui/multiple-stars";
 
 import {ServicesCarousel} from "@/src/components/agence-com/services-carousel";
 import {ExampleCustomerCard} from "@/src/components/agence-com/example-customer-card";
-import {ComCustomerExample} from "@/src/utils/types";
+import {ComCustomerExample, TextCustom} from "@/src/utils/types";
 
 import LogoMamatte from '../../../../public/img/mamatte-logo.webp'
 import LogoWiotte from '../../../../public/img/wiotte-logo.webp'
@@ -12,36 +12,41 @@ import {AmiensFoodSection} from "@/src/components/agence-com/amiensfood";
 import {FAQ} from "@/src/components/agence-com/faq";
 
 
-const MamatteExample: ComCustomerExample = {
-    from: "11.000",
-    to: "21.000",
-    name: "Mamatte boulangerie",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    logo: LogoMamatte as any,
-    mockup: '/video/video_mamatte.mov',
-    reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
-    type: 'video',
-    social_media: 'instagram',
-    images: ['/img/mamatte/image00001-min.jpeg', '/img/mamatte/image00002-min.jpeg', '/img/mamatte/image00003-min.jpeg', '/img/mamatte/image00004-min.jpeg', '/img/mamatte/image00005-min.jpeg', '/img/mamatte/image00006-min.jpeg', '/img/mamatte/image00007-min.jpeg', '/img/mamatte/image00008-min.jpeg', '/img/mamatte/image00009-min.jpeg', '/img/mamatte/image00010-min.jpeg'],
-    period: 'en un an'
-}
 
-const BoucherieWiotte: ComCustomerExample = {
-    from: "5000",
-    to: "11.500",
-    name: "Boucherie wiotte",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    logo: LogoWiotte as any,
-    mockup: '',
-    reversed: true,
-    reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
-    type: 'image',
-    social_media: 'tiktok',
-    images: ['/img/wiotte/image00001-min.jpeg', '/img/wiotte/image00002-min.jpeg', '/img/wiotte/image00003-min.jpeg', '/img/wiotte/image00004-min.jpeg', '/img/wiotte/image00005-min.jpeg', '/img/wiotte/image00006-min.jpeg', '/img/wiotte/image00007-min.jpeg', '/img/wiotte/image00008-min.jpeg', '/img/wiotte/image00009-min.jpeg', '/img/wiotte/image00010-min.jpeg'],
-    period: 'depuis février'
-}
 
-const AgenceCommunicationPage = () => {
+const AgenceCommunicationPage = async () => {
+
+
+    const texts: TextCustom[] = await fetch(`${process.env.APP_URL}/api/texts`, {cache: 'no-store'}).then(res => res.json())
+    const MamatteExample: ComCustomerExample = {
+        from: "11.000",
+        to: "21.000",
+        name: "Mamatte boulangerie",
+        description: texts.find(text => text.code === "COM_MAMATTE_EXAMPLE")?.text ?? '',
+        logo: LogoMamatte as any,
+        mockup: '/video/video_mamatte.mov',
+        reviewText: texts.find(text => text.code === "COM_MAMATTE_REVIEW")?.text ?? '',
+        type: 'video',
+        social_media: 'instagram',
+        images: ['/img/mamatte/image00001-min.jpeg', '/img/mamatte/image00002-min.jpeg', '/img/mamatte/image00003-min.jpeg', '/img/mamatte/image00004-min.jpeg', '/img/mamatte/image00005-min.jpeg', '/img/mamatte/image00006-min.jpeg', '/img/mamatte/image00007-min.jpeg', '/img/mamatte/image00008-min.jpeg', '/img/mamatte/image00009-min.jpeg', '/img/mamatte/image00010-min.jpeg'],
+        period: 'en un an'
+    }
+
+    const BoucherieWiotte: ComCustomerExample = {
+        from: "5000",
+        to: "11.500",
+        name: "Boucherie wiotte",
+        description: texts.find(text => text.code === "COM_WIOTTE_EXAMPLE")?.text ?? '',
+        logo: LogoWiotte as any,
+        mockup: '',
+        reversed: true,
+        reviewText: texts.find(text => text.code === "COM_WIOTTE_REVIEW")?.text ?? '',
+        type: 'image',
+        social_media: 'tiktok',
+        images: ['/img/wiotte/image00001-min.jpeg', '/img/wiotte/image00002-min.jpeg', '/img/wiotte/image00003-min.jpeg', '/img/wiotte/image00004-min.jpeg', '/img/wiotte/image00005-min.jpeg', '/img/wiotte/image00006-min.jpeg', '/img/wiotte/image00007-min.jpeg', '/img/wiotte/image00008-min.jpeg', '/img/wiotte/image00009-min.jpeg', '/img/wiotte/image00010-min.jpeg'],
+        period: 'depuis février'
+    }
+
     return (
         <section className={'mt-28'}>
 
@@ -73,7 +78,7 @@ const AgenceCommunicationPage = () => {
                         <div className={'mt-64 lg:mt-20 hidden md:block'}>
                             <ReviewCustomer
                                 review={{
-                                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                                    text: MamatteExample.reviewText,
                                     logo: LogoMamatte as any,
                                     hasMockup: MamatteExample.mockup
                                 }}
@@ -87,9 +92,9 @@ const AgenceCommunicationPage = () => {
                         <div className={'mt-64 lg:mt-20 hidden md:block'}>
                             <ReviewCustomer
                                 review={{
-                                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                                    text: BoucherieWiotte.reviewText,
                                     logo: LogoWiotte as any,
-                                    hasMockup: MamatteExample.mockup
+                                    hasMockup: BoucherieWiotte.mockup
                                 }}
                             />
                         </div>

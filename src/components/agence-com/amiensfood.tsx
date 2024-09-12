@@ -4,8 +4,13 @@ import Image from "next/image";
 
 import Logo from '@/public/img/logo/logo-no-text.png'
 import PicturePicto from '@/public/img/appareil-photo.png'
+import {TextCustom} from "@/src/utils/types";
 
-export const AmiensFoodSection = () => {
+export const AmiensFoodSection = async () => {
+
+    const texts: TextCustom[] = await fetch(`${process.env.APP_URL}/api/texts`, {cache: 'no-store'}).then(res => res.json())
+
+
     return (
         <div className={'bg-[#FFFAF6] px-4 pt-10 pb-16 rounded-tl-[100px] rounded-ee-[100px] md:rounded-ee-[150px] md:px-20 md:pb-10'}>
             <h2 className={'ml-6 md:ml-0 text-3xl xl:text-5xl'}>Le format vidéo <span
@@ -42,13 +47,7 @@ export const AmiensFoodSection = () => {
                     </div>
 
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                        ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.
+                        {texts.find(text => text.code === "COM_AMIENSFOOD")?.text ?? ''}
                     </p>
                 </div>
 

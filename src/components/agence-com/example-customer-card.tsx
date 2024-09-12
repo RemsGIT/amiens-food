@@ -69,7 +69,7 @@ export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
                             className={`text-white text-xs lg:text-sm text-justify ${data.reversed ? 'w-[90%] mx-auto lg:w-full lg:mx-0' : 'w-[90%] mx-auto lg:mx-0 lg:w-[80%]'}`}>
                             <p>{data.description}</p>
                             {data.images && (
-                                <div className={'w-3/4 mx-auto mt-8 mb-4 lg:w-full'}>
+                                <div className={'w-3/4 mx-auto mt-8 mb-4 lg:w-full😭'}>
                                     <ExampleCustomerImagesCarousel images={data.images} hasMockup={data.mockup}/>
                                 </div>
                             )}

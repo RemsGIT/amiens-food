@@ -20,6 +20,11 @@ export interface TextCustom {
         | 'PAYMENT_FORM_INF'
         | 'PAYMENT_FORM_PREVIEW'
         | 'ABOUT_PAGE'
+        | 'COM_MAMATTE_EXAMPLE'
+        | 'COM_MAMATTE_REVIEW'
+        | 'COM_WIOTTE_EXAMPLE'
+        | 'COM_WIOTTE_REVIEW'
+        | 'COM_AMIENSFOOD'
 
     text: string
 }

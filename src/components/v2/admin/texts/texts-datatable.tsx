@@ -1,5 +1,5 @@
 "use client"
- 
+
 import {CrudTable} from "@/src/components/v2/admin/crud-table";
 import {ColumnDef} from "@tanstack/react-table";
 import {Button} from "@/src/components/ui/button";
@@ -23,7 +23,7 @@ export const TextsDatatable = () => {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [texts, setTexts] = useState<any[]>([])
     const textAreaRef = useRef<HTMLTextAreaElement>(null)
-    
+
     const [openModal, setOpenModal] = useState(false)
     const [textToEdit, setTextToEdit] = useState<any>()
 
@@ -35,12 +35,12 @@ export const TextsDatatable = () => {
                 setIsLoading(false)
             })
     }, []);
-    
+
     const handleOpenModal = (id: string) => {
         setTextToEdit(id)
         setOpenModal(true)
     }
-    
+
     const onUpdate = (id: string) => {
         if(textAreaRef.current) {
             setIsSubmitting(true)
@@ -54,10 +54,10 @@ export const TextsDatatable = () => {
                         toast.success('Le texte a bien été modifié')
                         setTexts(prevTexts => prevTexts.map(text => text.id === id ? { ...text, text: res.text.text } : text));
                         setOpenModal(false)
-                        
+
                         setTimeout(() => {
                             setIsSubmitting(false)
-                        }, 300) 
+                        }, 300)
                     }
                     else {
                         toast.error('Veuillez réessayer plus tard')
@@ -102,7 +102,7 @@ export const TextsDatatable = () => {
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
-                            <DropdownMenuItem onClick={() => handleOpenModal(row.original)} 
+                            <DropdownMenuItem onClick={() => handleOpenModal(row.original)}
                             >
                                 Éditer
                             </DropdownMenuItem>
@@ -126,7 +126,7 @@ export const TextsDatatable = () => {
                         <Textarea
                             ref={textAreaRef}
                             defaultValue={textToEdit?.text}
-                            rows={3}
+                            rows={15}
                             className={"resize-none"}
                         />
                     </div>
