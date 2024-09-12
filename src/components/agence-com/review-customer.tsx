@@ -56,7 +56,7 @@ export const ReviewCustomer = ({review}:{review: CustomerReview}) => {
 
 
                 <div className={'italic text-justify mt-1'}>
-                    <span className={'not-italic font-semibold text-xs'}>Le petit mot : </span>
+                    <span className={'not-italic font-semibold text-sm'}>Le petit mot : </span>
                     <p className={'relative text-xs mt-1'}>
                         <Quote size={18} className={'absolute -left-6  scale-x-[-1]'}/>
                         {review.text}

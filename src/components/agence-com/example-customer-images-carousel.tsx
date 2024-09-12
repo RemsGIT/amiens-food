@@ -41,11 +41,11 @@ export const ExampleCustomerImagesCarousel = ({images, hasMockup}:{images: strin
                 className={'swiper-container'}
                 breakpoints={{
                     0: {
-                        slidesPerView: 1.1,
+                        slidesPerView: 1.8,
                         spaceBetween: 20
                     },
                     1000: {
-                        slidesPerView: hasMockup ? 1.1 : 2.1,
+                        slidesPerView: hasMockup ? 2.2 : 3.2,
                         grid: {
                             rows: 1,
                             fill: 'row'
@@ -59,7 +59,7 @@ export const ExampleCustomerImagesCarousel = ({images, hasMockup}:{images: strin
             >
                 {images.map((image, index) => (
                     <SwiperSlide key={index}>
-                        <img src={image} alt={''} className={'rounded-xl'}/>
+                        <img src={image} alt={''} className={'rounded-xl max-h-[300px]'}/>
                     </SwiperSlide>
                 ))}
 

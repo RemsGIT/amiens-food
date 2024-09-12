@@ -18,7 +18,7 @@ export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
                     De {data.from} à {data.to} 🚀
                     <br/>
                     <span className={'relative text-primary text-2xl lg:text-xl'}>
-                    abonnés  <span className={'text-xs font-normal'}>{data.period}</span>
+                    abonnés  <span className={'font-normal'}>{data.period}</span>
                     <Image
                         src={data.social_media === 'instagram' ? InstagramLogo : TiktokLogo}
                         alt={`${data.name} | Amiens food | ${data.social_media}`}
@@ -131,7 +131,7 @@ export const ExampleCustomerCard = ({data}: { data: ComCustomerExample }) => {
                         De {data.from} à {data.to} 🚀
                         <br/>
                         <span className={'relative text-white text-2xl lg:text-xl'}>
-                        abonnés  <span className={'text-xs font-normal'}>{data.period}</span>
+                        abonnés  <span className={'font-normal'}>{data.period}</span>
                         <Image
                             src={data.social_media === 'instagram' ? InstagramLogo : TiktokLogo}
                             alt={`${data.name} | Amiens food | ${data.social_media}`}

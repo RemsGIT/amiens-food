@@ -22,7 +22,7 @@ const MamatteExample: ComCustomerExample = {
     reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
     type: 'video',
     social_media: 'instagram',
-    images: ['https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300'],
+    images: ['/img/mamatte/image00001-min.jpeg', '/img/mamatte/image00002-min.jpeg', '/img/mamatte/image00003-min.jpeg', '/img/mamatte/image00004-min.jpeg', '/img/mamatte/image00005-min.jpeg', '/img/mamatte/image00006-min.jpeg', '/img/mamatte/image00007-min.jpeg', '/img/mamatte/image00008-min.jpeg', '/img/mamatte/image00009-min.jpeg', '/img/mamatte/image00010-min.jpeg'],
     period: 'en un an'
 }
 
@@ -37,7 +37,7 @@ const BoucherieWiotte: ComCustomerExample = {
     reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.',
     type: 'image',
     social_media: 'tiktok',
-    images: ['https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300','https://picsum.photos/500/300'],
+    images: ['/img/wiotte/image00001-min.jpeg', '/img/wiotte/image00002-min.jpeg', '/img/wiotte/image00003-min.jpeg', '/img/wiotte/image00004-min.jpeg', '/img/wiotte/image00005-min.jpeg', '/img/wiotte/image00006-min.jpeg', '/img/wiotte/image00007-min.jpeg', '/img/wiotte/image00008-min.jpeg', '/img/wiotte/image00009-min.jpeg', '/img/wiotte/image00010-min.jpeg'],
     period: 'depuis février'
 }
 
@@ -117,7 +117,7 @@ const AgenceCommunicationPage = () => {
                         <AmiensFoodSection/>
                     </div>
 
-                    <div className={'mt-20 bg-[#FFFAF7]  pt-8 pb-20 rounded-tl-[100px]'} >
+                    <div className={'mt-20 bg-[#FFFAF7]  pt-8 pb-20 rounded-tl-[100px]'}>
                         <h3 className={'text-center text-3xl max-w-max mx-auto font-bold uppercase py-8 relative'}>
                             Mini FAQ pour mieux se connaître !
                             <span className={'absolute right-16 bottom-7 md:-right-10 md:top-5'}>
