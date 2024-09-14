@@ -44,7 +44,7 @@ export const ReviewCustomer = ({review}:{review: CustomerReview}) => {
                     <Image
                         src={review.logo as any}
                         alt={`Partenaire amiens food`}
-                        className={'w-[40px] h-[40px] bg-black rounded-full p-1 object-contain'}
+                        className={'w-[40px] h-[40px] bg-black rounded-full object-contain'}
                     />
                     <div className={'flex'}>
                         {Array.from({length: 5}, (index: number) => (
@@ -55,10 +55,10 @@ export const ReviewCustomer = ({review}:{review: CustomerReview}) => {
                 </div>
 
 
-                <div className={'italic text-justify mt-1'}>
-                    <span className={'not-italic font-semibold text-sm'}>Le petit mot : </span>
-                    <p className={'relative text-xs mt-1'}>
-                        <Quote size={18} className={'absolute -left-6  scale-x-[-1]'}/>
+                <div className={`italic text-justify mt-1 ${review.hasMockup ? '-ml-9' : ''}`}>
+                    <span className={`not-italic font-semibold text-sm ${review.hasMockup ? 'ml-3' : ''}`}>Le petit mot : </span>
+                    <p className={`relative text-xs mt-1`}>
+                        <Quote size={18} className={`absolute ${review.hasMockup ? '-left-3.5 -top-6' : '-left-6'} scale-x-[-1]`}/>
                         {review.text}
                         <Quote size={18} className={'inline ml-2 align-text-top'}/>
                     </p>

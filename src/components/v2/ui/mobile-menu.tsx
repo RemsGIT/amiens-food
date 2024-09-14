@@ -86,13 +86,22 @@ export default function MobileMenu() {
                     </Link>
                   </li>
               )}
-              <li className="pb-2 border-b border-gray-200">
+              <li>
                 <Link
                     href="/contact"
                     className="flex text-gray-600 hover:text-gray-900 py-2 text-xl"
                     onClick={() => setMobileNavOpen(false)}
                 >
                   Contact
+                </Link>
+              </li>
+              <li className="pb-2 border-b border-gray-200">
+                <Link
+                    href="/agence-communication"
+                    className="flex text-gray-600 hover:text-gray-900 py-2 text-xl"
+                    onClick={() => setMobileNavOpen(false)}
+                >
+                  Ton agence de communication
                 </Link>
               </li>
               <li className={"text-center pt-3"}>

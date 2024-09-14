@@ -5,7 +5,7 @@ import {ExampleCustomerCard} from "@/src/components/agence-com/example-customer-
 import {ComCustomerExample, TextCustom} from "@/src/utils/types";
 
 import LogoMamatte from '../../../../public/img/mamatte-logo.webp'
-import LogoWiotte from '../../../../public/img/wiotte-logo.webp'
+import LogoWiotte from '../../../../public/img/wiotte-logo.jpg'
 import {AgenceComContact} from "@/src/components/agence-com/contact";
 import {ReviewCustomer} from "@/src/components/agence-com/review-customer";
 import {AmiensFoodSection} from "@/src/components/agence-com/amiensfood";
@@ -20,7 +20,7 @@ const AgenceCommunicationPage = async () => {
     const texts: TextCustom[] = await fetch(`${process.env.APP_URL}/api/texts`, {cache: 'no-store'}).then(res => res.json())
     const MamatteExample: ComCustomerExample = {
         from: "11.000",
-        to: "21.000",
+        to: "25.000",
         name: "Mamatte boulangerie",
         description: texts.find(text => text.code === "COM_MAMATTE_EXAMPLE")?.text ?? '',
         logo: LogoMamatte as any,
