@@ -57,7 +57,7 @@ export const ReviewCustomer = ({review}:{review: CustomerReview}) => {
                 <div className={`italic text-justify mt-1 ${review.hasMockup ? '-ml-9' : ''}`}>
                     <span className={`not-italic font-semibold text-sm ${review.hasMockup ? 'ml-5' : ''}`}>Le petit mot : </span>
                     <p className={`relative text-xs mt-1`}>
-                        <Quote size={18} className={`absolute ${review.hasMockup ? '-left-2 -top-6' : '-left-6'} scale-x-[-1]`}/>
+                        <Quote size={18} className={`absolute ${review.hasMockup ? '-left-1 -top-6' : '-left-6'} scale-x-[-1]`}/>
                         {review.text}
                         <Quote size={18} className={'inline ml-2 align-text-top'}/>
                     </p>
