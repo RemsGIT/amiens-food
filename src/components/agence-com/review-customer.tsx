@@ -44,7 +44,7 @@ export const ReviewCustomer = ({review}:{review: CustomerReview}) => {
                     <Image
                         src={review.logo as any}
                         alt={`Partenaire amiens food`}
-                        className={'w-[40px] h-[40px] bg-black rounded-full object-contain'}
+                        className={'w-[50px] h-[50px] bg-black rounded-full object-contain'}
                     />
                     <div className={'flex'}>
                         {Array.from({length: 5}, (index: number) => (
