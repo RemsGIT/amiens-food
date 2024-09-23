@@ -84,7 +84,7 @@ const PartnerDetail = async ({params}:{params: {slug: string}}) => {
                                         key={offer.id}
                                         className={"shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] shadow-slate-300 hover:-translate-y-1.5 transition duration-300 rounded-xl"}>
                                         <Card
-                                            className={" border-none min-h-[120px] flex justify-center items-center bg-primary"}>
+                                            className={" border-none min-h-[120px] flex justify-center items-center bg-primary h-full"}>
                                             <CardContent className={"p-0"}>
                                                 <p className={"font-extrabold text-2xl text-white text-center"}>
                                                     {offer.text}
