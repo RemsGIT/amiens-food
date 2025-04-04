@@ -71,7 +71,7 @@ export async function POST(request : Request) {
                 
                 if(!!user.surname) formData.append('surname', user.surname);
                 
-                await fetch("https://amiensfood-pass.rcastro.fr/pass/examples/example.php?action=create", {
+                await fetch("https://amiensfood-pass-2.rcastro.fr/pass/examples/example.php?action=create", {
                     method: "POST",
                     body: formData
                 })
