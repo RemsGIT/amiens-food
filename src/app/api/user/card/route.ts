@@ -30,12 +30,12 @@ export async function POST(request : Request) {
     if(!session && !params?.fromWebhook) {
         return NextResponse.json({success: false, error: 'User must be connected'})
     }
-    
+
     let user = await prisma.user.findUnique({
         where: {email: session ? session.user.email : params.email},
         include: {StripeAccount: true}
     })
-    
+
     if(!user?.StripeAccount || (user.StripeAccount.expireAt && (user.StripeAccount.expireAt <= new Date())) || !user?.StripeAccount.start) {
         return NextResponse.json({success: false, error: 'Subscription invalid'})
     }
@@ -43,7 +43,8 @@ export async function POST(request : Request) {
 
     if(user) {
         // Generate new image
-        if(!params.afterPayment || (params.afterPayment && !user.card)) {
+        // Si après paiement ou vient du webhook (évite les duplications)
+        if(!params.afterPayment || (params.afterPayment && !user.card) || params?.fromWebhook) {
             // If first card -> generate number
             if(!user.card_number) {
                 const latestUser = await prisma.user.findFirst({
@@ -60,7 +61,7 @@ export async function POST(request : Request) {
                     },
                     include: {StripeAccount: true}
                 })
-                
+
                 // Generate the pass
                 const formData = new FormData()
                 formData.append('num', (lastCardNumber + 1).toString());
@@ -68,9 +69,9 @@ export async function POST(request : Request) {
                 formData.append('lastname', user.lastname as string);
                 formData.append('expiration', user.StripeAccount?.expireAt ? user.StripeAccount.expireAt.toLocaleDateString("fr") : '');
                 formData.append('image', `${process.env.NEXT_PUBLIC_AWS_S3_URL_FILE}/${user.image}`)
-                
+
                 if(!!user.surname) formData.append('surname', user.surname);
-                
+
                 await fetch("https://amiensfood-pass.rcastro.fr/pass/examples/example.php?action=create", {
                     method: "POST",
                     body: formData
@@ -86,16 +87,14 @@ export async function POST(request : Request) {
                             })
                         }
                     })
-                
+
             }
 
             // Create the picture
-
             const baseImageBuffer = await fs.readFile(path.join(process.cwd(), 'public', 'front.png'));
 
             // Créer une instance sharp avec l'image de base
             let baseImage = sharp(baseImageBuffer);
-            
 
             // Formater la date d'expiration si elle existe
             const expiredDate = user.StripeAccount?.expireAt ? DateTime.fromISO(user.StripeAccount?.expireAt.toISOString()).toFormat('dd/MM/yyyy') : '';
@@ -113,7 +112,7 @@ export async function POST(request : Request) {
                 return Buffer.from(svg);
 
             }
-            
+
             // Ajouter du texte sur l'image
             const overlays = [];
 
@@ -142,7 +141,7 @@ export async function POST(request : Request) {
                         const resizedImage = await sharp(profileImageBuffer)
                             .resize({ width: 180, height: 180, fit: 'cover' })
                             .toBuffer()
-                        
+
                         overlays.push({ input: resizedImage, top: 14, left: 13 });
                     }
 
@@ -158,7 +157,7 @@ export async function POST(request : Request) {
 
             // Convertir l'image en buffer
             const compositedImageBuffer = await baseImage.png().toBuffer();
-            
+
             // delete old card
             if(user.card) {
                 try {
@@ -184,8 +183,8 @@ export async function POST(request : Request) {
             const command = new PutObjectCommand(s3Params)
             await s3.send(command)
             console.log('end upload to s3')
-            
-            
+
+
             // Add image to user
             const userUpdated = await prisma.user.update({
                 where: {id: user.id},
@@ -198,11 +197,11 @@ export async function POST(request : Request) {
             // Send it to email with resend
             //await sendCardByEmail(`${process.env.NEXT_PUBLIC_AWS_S3_URL_FILE}/${user.card}`, user.email)
         }
-        
+
         return NextResponse.json({success: true, card: `${process.env.NEXT_PUBLIC_AWS_S3_URL_FILE}/${user.card}`})
 
     }
-    
+
     return NextResponse.json({success: true, message: 'No generation'})
 }
 
