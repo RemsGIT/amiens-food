@@ -72,7 +72,7 @@ export async function POST(request : Request) {
 
                 if(!!user.surname) formData.append('surname', user.surname);
 
-                await fetch("https://amiensfood-pass.rcastro.fr/pass/examples/example.php?action=create", {
+                await fetch("https://amiensfood-pass-2.rcastro.fr/pass/examples/example.php?action=create", {
                     method: "POST",
                     body: formData
                 })
@@ -91,10 +91,12 @@ export async function POST(request : Request) {
             }
 
             // Create the picture
+
             const baseImageBuffer = await fs.readFile(path.join(process.cwd(), 'public', 'front.png'));
 
             // Créer une instance sharp avec l'image de base
             let baseImage = sharp(baseImageBuffer);
+
 
             // Formater la date d'expiration si elle existe
             const expiredDate = user.StripeAccount?.expireAt ? DateTime.fromISO(user.StripeAccount?.expireAt.toISOString()).toFormat('dd/MM/yyyy') : '';
